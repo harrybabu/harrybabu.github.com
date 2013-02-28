@@ -40,6 +40,10 @@
 	<script src="/js/custom.js" type="text/javascript"></script>	
 	
 	<script type="text/javascript">
+		var browserName = navigator.appName;
+       		if( browserName == "Microsoft Internet Explorer" ) {
+       			alert("My blog works best with Chrome 10+,Firefox 3+ and Safari 5+ browsers.");
+       		}
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 		var disqus_shortname = 'harrybabu'; // required: replace example with your forum shortname
 
