@@ -1,0 +1,147 @@
+---
+layout: post
+title: How I built my blog
+category: Coding
+tags: jekyll bootstrap github disqus
+year: 2013
+month: 4
+day: 15
+published: true
+summary: A tutorial on how I built my blog...
+---
+
+<div class="row">
+	<div class="span3 columns well">
+	  <h3>About this topic</h3>
+	  <p>How I did this blog is nothing new, as a matter of fact many have done exactly what I did and it is well documented. This post is just on how I did it.</p>	  
+	  <br/>
+	  <h3>Topic buzz</h3>
+	  <p>What others are thinking. Add to the conversation and generate some chatter.</p>
+	  <p> <a href="http://www.instapaper.com/hello2?url=http://harrybabu.github.com{{ page.url }}&amp;title={{ page.title }}"
+title="Save {{ page.title }} to Instapaper" target="_blank">+Instapaper</a></p>
+	  <p><g:plusone size="medium"></g:plusone></p>
+	  <br/>
+	  <h3>Read later</h3>
+	  <p>Save this article for a later read or point of reference. <a href="http://www.instapaper.com/hello2?url=http://basav.github.com{{ page.url }}&title={{ page.title }}" title="Save {{ page.title }} to Instapaper" target="_blank">+Instapaper</a> </p>
+	  <br/>  
+	</div>	
+	<div class="span8 columns">	  
+	  <h2>GitHub</h2>
+	  <p>I choose to use GitHub to host the blog using the GitHub Pages feature by creating a repository using my GitHub username.</p>  
+	  <ul>
+	    <li>Setup a free <a href="https://github.com/signup/free" target="_blank">GitHub</a> account, and follow the <a href="http://help.github.com/win-set-up-git/" target="_blank">setup instructions</a>.</li>		
+		 <li>Create a <a href="http://pages.github.com/" target="_blank">GitHub Page</a> with your username.</li>
+		 <li><p>Clone the repository locally on your machine<pre><code>$ git clone https://github.com/USERNAME/USERNAME.github.com.git USERNAME.github.com </code></pre></p></li>
+	  </ul>
+	  <p>It may take a little while for GitHub to setup your page but eventually it will start working and you'll have your GitHub page and an empty repository.</p>
+	  <hr>
+	  <h2>Jekyll</h2>
+	  <p><a href="http://jekyllrb.com/" target="_blank" title="Go to Jekyll">Jekyll</a> is a static site generator.  It is fairly easy to work with and it will allow you to create your blogs (each as a file) and it will know how to plug in simple blog aware properties.</p>
+	  <h2><small>Get some code</small></h2>
+	  <p>To get started here I went the typical <i>lazy route</i> and ripped down a friends GitHub page that was using Jekyll.  So feel free to <a href="https://github.com/harrybabu/harrybabu.github.com">rip down my GitHub page</a> if you wish or <a href="https://github.com/harrybabu/harrybabu.github.com" target="_blank">fork my GitHub page</a>.  I'm sure the tutorials that are mentioned at the top of this blog go into great detail on how to <code>rake</code> everything together but I don't always roll that way so to each his own here on this step.</p>
+	  <h2><small>You reap what you sow</small></h2>
+	  <p>Next I copied the files into my repository and started looking around to see how it was put together.  Since I like to dive into things without much reading I was quickly confused how to get the site to load on my local machine.  Luckily for you I have figured that out ...</p>
+	  <h2><small>Install Ruby and Jekyll</small></h2>
+	  <p>Installing Jekyll is easier than ever on Ubuntu 12.10 using apt-get and gem install. Additional options such as Pygments and Rdiscount can be added with the same methods.</p>
+	  <p><strong>Install Ruby 1.9.1</strong> which includes the <code>gem</code> command, and the <code>make</code> command</p>
+	  <p><pre><code>sudo apt-get install ruby1.9.1 ruby1.9.1-dev make</code></pre></p>
+	  <p><strong>Next</strong> install Jekyll</p>
+	  <p><pre><code>sudo gem install jekyll</code></pre></p>	  
+	  <h2><small>Additional Options</small></h2>
+	  <p><strong>Install Pygments</strong> code syntax highlighter:</p>
+	  <p><pre><code>sudo apt-get install python-pygments</code></pre></p>
+	  <p><strong>Install Rdiscount and Kramdown</strong> renderers for Markdown:</p>
+	  <p><pre><code>sudo gem install rdiscount kramdown</code></pre></p>
+	  <h2><small>Spin up a Jekyll Server</small></h2>
+	  <p><strong>Open a Terminal</strong> and navigate to the directory of your GitHub pages repository</p>
+	  <p><pre><code>cd username.github.com</code></pre></p>
+	  <p><pre><code>jekyll --server</code></pre></p>
+	  <p>This will fire up a local server that will serve up your blog while you are working locally.  You should be able to navigate to something like <i>localhost:4000</i>.  As long as you leave this GitBash window open you'll have the server running at that port to test your code locally.</p>
+	  <p>If you wish to change the jekyll <strong>port</strong>:</p>
+	  <p><pre><code>jekyll --server 4001</code></pre></p>	  
+	  <hr>
+	  <h2>Twitter Bootstrap</h2>
+	  <p>Love it or hate it Twitter Bootstrap is undeniably one of the best web frameworks out on the web.  I used Twitter Bootstrap to style my blog site because it is free, already packaged up and ready to go, well documented, it looks good, and it has everything that I needed.</p>	  
+	  <br/>
+	  <blockquote>
+		<p>When normal sense makes good sense, seek no other sense.</p>
+		<small>Chris Philbeck</small>
+	  </blockquote>	  
+	  <h2><small>Download Twitter Bootstrap</small></h2>
+	  <ul>	    
+		<li><a href="http://twitter.github.com/bootstrap/assets/bootstrap.zip" title="Click to download Twitter Bootstrap"> Download Twitter Bootstrap </a></li>
+	   	<li><a href="http://twitter.github.com/bootstrap/" title="Go to Twitter Bootstrap" target="_blank">Twitter Bootstrap</a> is well documented and has good examples on how to implement the various components.</li>
+	  </ul>
+	  <hr>
+	  <h2>Feedback Button</h2>	
+	  <ul>	    
+		<li>Create a repository in your GitHub account called <strong>Feedback</strong>.</li>
+	   	<li>Create a button that links to the <i>new</i> issue section of that repository.</li>
+	  </ul>	
+	  <p>Now followers can leave you feedback and you can manage it accordingly.</p>
+	  <p><a class="btn btn-mini btn-info" href="https://github.com/harrybabu/Feedback/issues/new" title="Leave Harrybabu feedback using GitHub" target="_blank"><i class="icon-comment icon-white"></i> Leave me feedback</a></p>	  
+	  <hr>
+	  <h2>Jekyll Continued</h2>
+	  <h2><small>Pages and Properties</small></h2>	
+	  <p>Using Jekyll you save your blog posts as <code>.html</code> files which contain a header section like the code sample below and html, css, javascript, etc.</p>
+	  <script src="https://gist.github.com/5908192.js"> </script>
+	  <p>To create the header of every blog post I simply <i>include</i> a template header that has the following properties set.</p>	
+	  <p><pre><code>&lt;h4&gt;&lt;strong&gt;&#123;&#123; page.date | date: "%B %e, %Y" &#125;&#125; &lt;small&gt;. &#123;&#123; page.category &#125;&#125; .&lt;/small&gt; &#123;&#123; page.title &#125;&#125;&lt;/strong&gt;&lt;/h4&gt;</code></pre></p>	  
+	  <h4><strong>{{ page.date | date: "%B %e, %Y" }} <small>. {{ page.category }} .</small> {{ page.title }}</strong></h4>	  
+	  <hr>
+	  <h2>Publish to github</h2>	
+	  <p><strong>Navigate</strong> to Github page directory</p>
+	  <p><pre><code>cd username.github.com</code></pre></p>
+	  <p><strong>Add</strong> all the files to commit</p>
+	  <p><pre><code>git add .</code></pre></p>
+	  <p><strong>Commit</strong> the files with appropriate message</p>
+	  <p><pre><code>git commit -a -m "Add new content"</code></pre></p>
+	  <p><strong>Push</strong> to Github directory</p>
+	  <p><pre><code>git push</code></pre></p>	  	  	  
+	  <hr>
+	  <h2>In Conclusion</h2>
+	  <p>I hope this sparks you to try out GitHub, Jekyll, Twitter Bootstrap and other open source web resources.  I have just begun to scratch the surface here and this blog doesn't attempt to cover all of details but I would like to hear what other cool integrations people are doing on their blogs.</p>	  
+	  <hr>		
+	</div>
+</div> 
+
+<div class="row">
+	<div class="span3 columns">&nbsp;</div>
+	<div class="span9 column">
+			<p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"><i class="icon-chevron-left"></i></a> 	{% endif %}   {% if page.next.url %} 	<a href="{{page.next.url}}" title="Next Post: {{page.next.title}}"><i class="icon-chevron-right"></i></a> 	{% endif %} </p>  
+	</div>
+</div>
+
+<div class="row">
+    <div class="span3 columns">&nbsp;</div>
+    <div class="span9 columns">    
+        <h2>Comments Section</h2>
+        <p>Feel free to comment on the post but keep it clean and on topic.</p> 
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'harrybabu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
